@@ -3,12 +3,12 @@ from flask_mysqldb import MySQL
 import time
 
 app = Flask(__name__)
-# app.config["SQLALCHEMY_DATABASE_URI"] ='mysql://root:@localhost/portfolio'
+# app.config["SQLALCHEMY_DATABASE_URI"] ='mysql://id20990148_portfolio:Webhost@159@localhostid20990148_portfolio'
 app.secret_key = '159'
 app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''
-app.config['MYSQL_DB'] = 'portfolio'
+app.config['MYSQL_USER'] = 'id20990148_portfolio'
+app.config['MYSQL_PASSWORD'] = 'Webhost@159'
+app.config['MYSQL_DB'] = 'id20990148_portfolio'
 mysql = MySQL(app)
 
 # @app.route('/')
@@ -35,7 +35,7 @@ def contact():
 
         cur = mysql.connection.cursor()
 
-        cur.execute("INSERT INTO data VALUES (%s,%s,%s)",(name,email,message))
+        cur.execute("INSERT INTO data VALUES (%s,%s,%s)",(name,email,msg))
 
         # db.session.add(entry)
         mysql.connection.commit()
